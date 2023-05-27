@@ -1,57 +1,44 @@
 using Microsoft.EntityFrameworkCore;
-using TrasladoSeguro.Models;
-using TrasladoSeguro.Servicios.Contrato;
-using TrasladoSeguro.Servicios.Implementacion;
-using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Data.SqlClient;
 using TrasladoSeguro.Data;
+using TrasladoSeguro.Models;
 
-var builder = WebApplication.CreateBuilder(args);
-
-// Add services to the container.
-builder.Services.AddControllersWithViews();
-
-builder.Services.AddDbContext<TrasladoSeguroContext>(options => {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("SupermarketDB"));
-});
-
-builder.Services.AddScoped<IUsuarioService, UsuarioService>();
-
-builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-    .AddCookie(options =>
-    {
-        options.LoginPath = "/Inicio/IniciarSesion";
-        options.ExpireTimeSpan = TimeSpan.FromMinutes(20);
-    });
-
-builder.Services.AddControllersWithViews(options => {
-    options.Filters.Add(
-            new ResponseCacheAttribute
-            {
-                NoStore = true,
-                Location = ResponseCacheLocation.None,
-            }
-        );
-});
-
-var app = builder.Build();
-
-// Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
+public class Program
 {
-    app.UseExceptionHandler("/Home/Error");
+    public static void Main(string[] args)
+    {
+        var builder = WebApplication.CreateBuilder(args);
+
+        // Add services to the container.
+        builder.Services.AddRazorPages();
+        builder.Services.AddAuthentication().AddCookie("MyCookieAuth", options =>
+        {
+            options.Cookie.Name = "MyCookieAuth";
+            options.LoginPath = "/Account/Login";
+        });
+
+        builder.Services.AddDbContext<TrasladoContext>(options =>
+        options.UseSqlServer(builder.Configuration.GetConnectionString("SupermarketDB"))
+        );
+
+        var app = builder.Build();
+
+        // Configure the HTTP request pipeline.
+        if (!app.Environment.IsDevelopment())
+        {
+            app.UseExceptionHandler("/Error");
+            // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+            app.UseHsts();
+        }
+
+        app.UseHttpsRedirection();
+        app.UseStaticFiles();
+
+        app.UseRouting();
+
+        app.UseAuthorization();
+
+        app.MapRazorPages();
+
+        app.Run();
+    }
 }
-app.UseStaticFiles();
-
-app.UseRouting();
-
-app.UseAuthentication();
-
-app.UseAuthorization();
-
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Inicio}/{action=IniciarSesion}/{id?}");
-
-app.Run();

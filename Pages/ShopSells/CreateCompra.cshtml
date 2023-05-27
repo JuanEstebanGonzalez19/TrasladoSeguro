@@ -1,0 +1,53 @@
+﻿@page
+@model TrasladoSeguro.Pages.ShopSells.CreateCompraModel
+@{
+    ViewData["Title"] = "Shop liqueur";
+}
+<h1>Create Shop</h1>
+
+<h4>Shop liqueur</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ShopSell.Status" class="control-label"></label>
+                <input asp-for="ShopSell.Status" class="form-control" />
+                <span asp-validation-for="ShopSell.Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ShopSell.Name" class="control-label"></label>
+                <input asp-for="ShopSell.Name" class="form-control" />
+                <span asp-validation-for="ShopSell.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ShopSell.Price" class="control-label"></label>
+                <input asp-for="ShopSell.Price" class="form-control" />
+                <span asp-validation-for="ShopSell.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ShopSell.Sale_Percentage" class="control-label"></label>
+                <input asp-for="ShopSell.Sale_Percentage" class="form-control" />
+                <span asp-validation-for="ShopSell.Sale_Percentage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ShopSell.Description" class="control-label"></label>
+                <input asp-for="ShopSell.Description" class="form-control" />
+                <span asp-validation-for="ShopSell.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-3">
+                <input type="submit" value="CreateCompra" class="btn btn-success" />
+                <a asp-page="Index" class="btn btn-primary">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+

@@ -7,16 +7,47 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="Pages\Account\Login.cshtml" />
+    <None Include="Pages\Account\Logout.cshtml" />
+    <None Include="Pages\Categories\Create.cshtml" />
+    <None Include="Pages\Categories\Delete.cshtml" />
+    <None Include="Pages\Categories\Edit.cshtml" />
+    <None Include="Pages\Categories\Index.cshtml" />
+    <None Include="Pages\Error.cshtml" />
+    <None Include="Pages\Index.cshtml" />
+    <None Include="Pages\PayModes\Create.cshtml" />
+    <None Include="Pages\PayModes\Delete.cshtml" />
+    <None Include="Pages\PayModes\Edit.cshtml" />
+    <None Include="Pages\PayModes\Index.cshtml" />
+    <None Include="Pages\Privacy.cshtml" />
+    <None Include="Pages\Productos\Create.cshtml" />
+    <None Include="Pages\Productos\Delete.cshtml" />
+    <None Include="Pages\Productos\Edit.cshtml" />
+    <None Include="Pages\Productos\Index.cshtml" />
+    <None Include="Pages\Providers\Create.cshtml" />
+    <None Include="Pages\Providers\Delete.cshtml" />
+    <None Include="Pages\Providers\Edit.cshtml" />
+    <None Include="Pages\Providers\Index.cshtml" />
+    <None Include="Pages\Sells\Sells.cshtml" />
+    <None Include="Pages\Shared\_Layout.cshtml" />
+    <None Include="Pages\Shared\_LoginStatusPartial.cshtml" />
+    <None Include="Pages\Shared\_ValidationScriptsPartial.cshtml" />
+    <None Include="Pages\ShopSells\CreateCompra.cshtml" />
+    <None Include="Pages\ShopSells\CreateVenta.cshtml" />
+    <None Include="Pages\ShopSells\DeleteVenta.cshtml" />
+    <None Include="Pages\ShopSells\EditCompra.cshtml" />
+    <None Include="Pages\ShopSells\Index.cshtml" />
+    <None Include="Pages\_ViewImports.cshtml" />
+    <None Include="Pages\_ViewStart.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.5">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Pages\" />
   </ItemGroup>
 
 </Project>

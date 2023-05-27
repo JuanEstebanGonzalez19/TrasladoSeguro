@@ -1,0 +1,70 @@
+﻿@page
+@model TrasladoSeguro.Pages.ShopSells.IndexModel
+@{
+    ViewData["Title"] = "Index Buy and Sell";
+}
+<h1>Index Buy and Sell</h1>
+<p>
+    <a asp-page="CreateCompra" class="btn btn-success">BUY STOCK</a>
+    <a asp-page="CreateVenta" class="btn btn-success">BUY SHOP</a>
+
+</p>
+<p>
+    <form method="get">
+    <div class="form-group">
+        <input type="text" class="form-control" name="searchString" placeholder="Buscar producto del stock">
+    </div>
+    <button type="submit" class="btn btn-primary">Buscar</button>
+</form>
+</p>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ShopSells[0].Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShopSells[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShopSells[0].Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShopSells[0].Sale_Percentage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShopSells[0].Description)
+            </th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.ShopSells)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sale_Percentage)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    <a asp-page="./DeleteVenta" asp-route-id="@item.Id" class="btn btn-danger">Sell</a>
+                    <a asp-page="./EditCompra" asp-route-id="@item.Id" class="btn btn-danger">Edit</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

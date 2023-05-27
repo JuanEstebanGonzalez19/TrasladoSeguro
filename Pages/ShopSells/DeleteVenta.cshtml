@@ -1,0 +1,50 @@
+﻿@page
+@model TrasladoSeguro.Pages.ShopSells.DeleteVentaModel
+@{
+    ViewData["Title"] = "Sell";
+}
+<h1>Sell</h1>
+
+<h3>Are you dure you want to Sell</h3>
+<div>
+    <h4>Delete Sells</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ShopSell.Status)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ShopSell.Status)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ShopSell.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ShopSell.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ShopSell.Price)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ShopSell.Price)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ShopSell.Sale_Percentage)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ShopSell.Sale_Percentage)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ShopSell.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ShopSell.Description)
+        </dd>
+    </dl>
+    <form method="post">
+        <input type="hidden" asp-for=" ShopSell.Id" />
+        <input type="submit" value="DeleteVenta" class="btn btn-danger" />
+        <a asp-page="./Index" class="btn btn-primary">Back to list</a>
+    </form>
+</div>
+

@@ -1,0 +1,34 @@
+﻿@page
+@model TrasladoSeguro.Pages.Sells.SellsModel
+@{
+    ViewData["Title"] = "Sells";
+}
+
+<h1>Sells</h1>
+
+<form method="get">
+    <div class="form-group">
+        <input type="text" class="form-control" name="searchString" placeholder="Buscar producto">
+    </div>
+    <button type="submit" class="btn btn-primary">Buscar</button>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Precio</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var producto in Model.Productos)
+        {
+            <tr>
+                <td>@producto.Id</td>
+                <td>@producto.Name</td>
+                <td>@producto.Price</td>
+            </tr>
+        }
+    </tbody>
+</table>
