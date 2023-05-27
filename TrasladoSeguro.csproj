@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Pages\Conductores\Create.cshtml" />
+    <Content Remove="Pages\Conductores\Delete.cshtml" />
+    <Content Remove="Pages\Conductores\Edit.cshtml" />
+    <Content Remove="Pages\Conductores\Index.cshtml" />
     <Content Remove="Pages\Clientes\Create.cshtml" />
     <Content Remove="Pages\Clientes\Delete.cshtml" />
     <Content Remove="Pages\Clientes\Edit.cshtml" />
@@ -16,6 +20,10 @@
   <ItemGroup>
     <None Include="Pages\Account\Login.cshtml" />
     <None Include="Pages\Account\Logout.cshtml" />
+    <None Include="Pages\Conductores\Create.cshtml" />
+    <None Include="Pages\Conductores\Delete.cshtml" />
+    <None Include="Pages\Conductores\Edit.cshtml" />
+    <None Include="Pages\Conductores\Index.cshtml" />
     <None Include="Pages\Clientes\Create.cshtml" />
     <None Include="Pages\Clientes\Delete.cshtml" />
     <None Include="Pages\Clientes\Edit.cshtml" />
