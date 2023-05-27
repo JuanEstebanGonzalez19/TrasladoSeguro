@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using TrasladoSeguro.Data;
 using TrasladoSeguro.Models;
 
-namespace TrasladoSeguro.Pages.Conductores
+namespace TrasladoSeguro.Pages.Clientess
 {
     public class DeleteModel : PageModel
     {
@@ -14,24 +14,24 @@ namespace TrasladoSeguro.Pages.Conductores
             _context = context;
         }
         [BindProperty]
-        public Conductore Conductore { get; set; } = default!;
+        public Cliente Cliente { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null || _context.Conductores == null)
+            if (id == null || _context.Clientess == null)
             {
                 return NotFound();
             }
 
-            var conductore = await _context.Conductores.FirstOrDefaultAsync(m => m.Id == id);
+            var cliente = await _context.Clientess.FirstOrDefaultAsync(m => m.Id == id);
 
-            if (conductore == null)
+            if (cliente == null)
             {
                 return NotFound();
             }
             else
             {
-                Conductore = conductore;
+                Cliente = cliente;
             }
             return Page();
         }
@@ -41,20 +41,21 @@ namespace TrasladoSeguro.Pages.Conductores
 
         public async Task<IActionResult> OnPostAsync(int? id)
         {
-            if (id == null || _context.Conductores == null)
+            if (id == null || _context.Clientess == null)
             {
                 return NotFound();
             }
-            var conductore = await _context.Conductores.FindAsync(id);
+            var cliente = await _context.Clientess.FindAsync(id);
 
-            if (conductore != null)
+            if (cliente != null)
             {
-                Conductore = conductore;
-                _context.Conductores.Remove(Conductore);
+                Cliente = cliente;
+                _context.Clientess.Remove(Cliente);
                 await _context.SaveChangesAsync();
             }
 
             return RedirectToPage("./Index");
         }
+
     }
 }

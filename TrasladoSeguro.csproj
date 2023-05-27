@@ -11,10 +11,6 @@
     <Content Remove="Pages\Conductores\Delete.cshtml" />
     <Content Remove="Pages\Conductores\Edit.cshtml" />
     <Content Remove="Pages\Conductores\Index.cshtml" />
-    <Content Remove="Pages\Clientes\Create.cshtml" />
-    <Content Remove="Pages\Clientes\Delete.cshtml" />
-    <Content Remove="Pages\Clientes\Edit.cshtml" />
-    <Content Remove="Pages\Clientes\Index.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -24,10 +20,6 @@
     <None Include="Pages\Conductores\Delete.cshtml" />
     <None Include="Pages\Conductores\Edit.cshtml" />
     <None Include="Pages\Conductores\Index.cshtml" />
-    <None Include="Pages\Clientes\Create.cshtml" />
-    <None Include="Pages\Clientes\Delete.cshtml" />
-    <None Include="Pages\Clientes\Edit.cshtml" />
-    <None Include="Pages\Clientes\Index.cshtml" />
     <None Include="Pages\Categories\Create.cshtml" />
     <None Include="Pages\Categories\Delete.cshtml" />
     <None Include="Pages\Categories\Edit.cshtml" />

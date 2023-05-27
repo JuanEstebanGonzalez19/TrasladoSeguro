@@ -1,10 +1,9 @@
 ﻿@page
-@model TrasladoSeguro.Pages.Clientes.EditModel
+@model TrasladoSeguro.Pages.Clientess.CreateModel
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Create Cliente";
 }
-
-<h1>Edit</h1>
+<h1>Create</h1>
 
 <h4>Cliente</h4>
 <hr />
@@ -12,11 +11,10 @@
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Cliente.Id" />
             <div class="form-group">
-                <label asp-for="Cliente.Name" class="control-label"></label>
-                <input asp-for="Cliente.Name" class="form-control" />
-                <span asp-validation-for="Cliente.Name" class="text-danger"></span>
+                <label asp-for="Cliente.Nombre" class="control-label"></label>
+                <input asp-for="Cliente.Nombre" class="form-control" />
+                <span asp-validation-for="Cliente.Nombre" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Cliente.Telefono" class="control-label"></label>
@@ -28,9 +26,9 @@
                 <input asp-for="Cliente.Ciudad" class="form-control" />
                 <span asp-validation-for="Cliente.Ciudad" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-success" />
-                <a asp-page="./Index" class="btn btn-primary">Back to List</a>
+            <div class="form-group mt-3">
+                <input type="submit" value="Create" class="btn btn-success" />
+                <a asp-page="Index" class="btn btn-primary">Back to List </a>
             </div>
         </form>
     </div>

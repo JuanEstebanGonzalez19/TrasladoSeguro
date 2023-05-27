@@ -1,10 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using TrasladoSeguro.Data;
 using TrasladoSeguro.Models;
 
-namespace TrasladoSeguro.Pages.Conductores
+namespace TrasladoSeguro.Pages.Clientess
 {
     public class CreateModel : PageModel
     {
@@ -20,19 +19,19 @@ namespace TrasladoSeguro.Pages.Conductores
             return Page();
         }
         [BindProperty]
-        public Conductore Conductore { get; set; } = default!;
+        public Cliente Cliente { get; set; } = default!;
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid || _context.Conductores == null || Conductore == null)
+            if (!ModelState.IsValid || _context.Conductores == null || Cliente == null)
             {
                 return Page();
             }
 
-            _context.Conductores.Add(Conductore);
+            _context.Clientess.Add(Cliente);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
         }
+
     }
 }
-

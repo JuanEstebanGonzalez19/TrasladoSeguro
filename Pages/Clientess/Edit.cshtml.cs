@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using TrasladoSeguro.Data;
 using TrasladoSeguro.Models;
 
-namespace TrasladoSeguro.Pages.Clientes
+namespace TrasladoSeguro.Pages.Clientess
 {
     public class EditModel : PageModel
     {
@@ -20,12 +20,12 @@ namespace TrasladoSeguro.Pages.Clientes
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null || _context.Clientes == null)
+            if (id == null || _context.Clientess == null)
             {
                 return NotFound();
             }
 
-            var cliente = await _context.Clientes.FirstOrDefaultAsync(m => m.Id == id);
+            var cliente = await _context.Clientess.FirstOrDefaultAsync(m => m.Id == id);
             if (cliente == null)
             {
                 return NotFound();
@@ -63,7 +63,7 @@ namespace TrasladoSeguro.Pages.Clientes
 
         private bool ClienteExists(int id)
         {
-            return (_context.Clientes?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.Clientess?.Any(e => e.Id == id)).GetValueOrDefault();
         }
 
     }

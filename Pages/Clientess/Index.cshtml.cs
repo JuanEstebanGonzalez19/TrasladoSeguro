@@ -1,10 +1,11 @@
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using TrasladoSeguro.Data;
 using TrasladoSeguro.Models;
 
-namespace TrasladoSeguro.Pages.Clientes
+namespace TrasladoSeguro.Pages.Clientess
 {
     [Authorize]
     public class IndexModel : PageModel
@@ -16,14 +17,15 @@ namespace TrasladoSeguro.Pages.Clientes
             _context = context;
         }
 
-        public IList<Cliente> Clientes { get; set; } = default!;
-        
-        public async Task OnGetAsync() 
+        public IList<Cliente> Clientess { get; set; } = default!;
+
+        public async Task OnGetAsync()
         {
-            if (_context.Clientes != null) 
+            if (_context.Clientess != null)
             {
-                Clientes= await _context.Clientes.ToListAsync();
+                Clientess = await _context.Clientess.ToListAsync();
             }
         }
+
     }
 }

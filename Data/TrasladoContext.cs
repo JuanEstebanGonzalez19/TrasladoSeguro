@@ -10,7 +10,7 @@ namespace TrasladoSeguro.Data
         {
         }
         public DbSet<Product> Products { get; set; }
-        public DbSet<Cliente> Clientes { get; set; }
+        public DbSet<Cliente> Clientess { get; set; }
         public DbSet<Conductore> Conductores { get; set; }
 
         public DbSet<Category> Categories { get; set; }

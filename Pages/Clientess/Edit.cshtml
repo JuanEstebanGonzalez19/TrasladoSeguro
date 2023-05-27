@@ -1,9 +1,8 @@
 ﻿@page
-@model TrasladoSeguro.Pages.Clientes.EditModel
+@model TrasladoSeguro.Pages.Clientess.EditModel
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Edit Clientes";
 }
-
 <h1>Edit</h1>
 
 <h4>Cliente</h4>
@@ -14,9 +13,9 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Cliente.Id" />
             <div class="form-group">
-                <label asp-for="Cliente.Name" class="control-label"></label>
-                <input asp-for="Cliente.Name" class="form-control" />
-                <span asp-validation-for="Cliente.Name" class="text-danger"></span>
+                <label asp-for="Cliente.Nombre" class="control-label"></label>
+                <input asp-for="Cliente.Nombre" class="form-control" />
+                <span asp-validation-for="Cliente.Nombre" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Cliente.Telefono" class="control-label"></label>
