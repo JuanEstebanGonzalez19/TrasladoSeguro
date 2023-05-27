@@ -1,0 +1,53 @@
+﻿@page
+@model TrasladoSeguro.Pages.Conductoress.IndexModel
+@{
+    ViewData["Title"] = "Conductores";
+}
+<h1>Index Conductores</h1>
+<p>
+</p>
+
+<p>
+    <form method="get">
+        <div class="form-group">
+            <input type="text" class="form-control" name="searchString" placeholder="Buscar conductores">
+        </div>
+        <button type="submit" class="btn btn-primary">Buscar</button>
+    </form>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Conductoress[0].Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Conductoress[0].Telefono)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Conductoress[0].PrecioEstandar)
+            </th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Conductoress)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Telefono)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PrecioEstandar)
+                </td>
+                <td>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

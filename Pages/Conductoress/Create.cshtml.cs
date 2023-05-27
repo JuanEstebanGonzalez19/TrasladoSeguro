@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using TrasladoSeguro.Data;
 using TrasladoSeguro.Models;
 
-namespace TrasladoSeguro.Pages.Clientess
+namespace TrasladoSeguro.Pages.Conductoress
 {
     public class CreateModel : PageModel
     {
@@ -19,15 +19,15 @@ namespace TrasladoSeguro.Pages.Clientess
             return Page();
         }
         [BindProperty]
-        public Cliente Cliente { get; set; } = default!;
+        public Conductore Conductore { get; set; } = default!;
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid || _context.Clientess == null || Cliente == null)
+            if (!ModelState.IsValid || _context.Conductoress == null || Conductore == null)
             {
                 return Page();
             }
 
-            _context.Clientess.Add(Cliente);
+            _context.Conductoress.Add(Conductore);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
